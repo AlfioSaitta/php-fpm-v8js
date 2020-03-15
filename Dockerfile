@@ -101,6 +101,9 @@ RUN git clone https://chromium.googlesource.com/chromium/tools/depot_tools.git /
     \
     && echo extension=v8js.so > /usr/local/etc/php/conf.d/v8js.ini
 
+# Install PearMath_BigInteger package
+RUN pear install Math_BigInteger
+
 # Cleanup the image
 RUN cd /tmp \
     && rm -rf /tmp/depot_tools /usr/local/src/v8 /usr/local/src/v8js \
